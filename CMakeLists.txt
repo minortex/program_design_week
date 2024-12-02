@@ -44,6 +44,7 @@ else()
     else()
         add_executable(program_design_week
             ${PROJECT_SOURCES}
+            addrecord.ui
         )
     endif()
 

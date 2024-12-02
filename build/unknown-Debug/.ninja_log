@@ -1,0 +1,20 @@
+# ninja log v6
+214	1938	1733119867541676045	CMakeFiles/program_design_week.dir/mainwindow.cpp.o	3c6a8b7e4f709614
+38	214	1733119867531676027	/home/texsd/codes/program_design_week/build/unknown-Debug/program_design_week_autogen/include/ui_mainwindow.h	b76fdaff842e3986
+38	214	1733119867531676027	/home/texsd/codes/program_design_week/build/unknown-Debug/program_design_week_autogen/timestamp	b76fdaff842e3986
+38	214	1733119867531676027	program_design_week_autogen/include/ui_mainwindow.h	b76fdaff842e3986
+214	1902	1733119867541676045	CMakeFiles/program_design_week.dir/program_design_week_autogen/mocs_compilation.cpp.o	6203afaf0275ec50
+38	214	1733119867531676027	/home/texsd/codes/program_design_week/build/unknown-Debug/program_design_week_autogen/mocs_compilation.cpp	b76fdaff842e3986
+38	214	1733119867531676027	program_design_week_autogen/mocs_compilation.cpp	b76fdaff842e3986
+38	214	1733119867531676027	program_design_week_autogen/timestamp	b76fdaff842e3986
+1	49	1733119871941683767	/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/cmake.verify_globs	5595c7612e05a9b6
+49	187	1733119872091684029	build.ninja	61f9f74bfdd1a6a9
+0	40	1733119872105017386	/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/cmake.verify_globs	5595c7612e05a9b6
+41	67	1733119872145017457	program_design_week_autogen/timestamp	b76fdaff842e3986
+41	67	1733119872145017457	program_design_week_autogen/mocs_compilation.cpp	b76fdaff842e3986
+41	67	1733119872145017457	program_design_week_autogen/include/ui_mainwindow.h	b76fdaff842e3986
+41	67	1733119872145017457	/home/texsd/codes/program_design_week/build/unknown-Debug/program_design_week_autogen/timestamp	b76fdaff842e3986
+41	67	1733119872145017457	/home/texsd/codes/program_design_week/build/unknown-Debug/program_design_week_autogen/mocs_compilation.cpp	b76fdaff842e3986
+41	67	1733119872145017457	/home/texsd/codes/program_design_week/build/unknown-Debug/program_design_week_autogen/include/ui_mainwindow.h	b76fdaff842e3986
+67	1729	1733119872171684170	CMakeFiles/program_design_week.dir/main.cpp.o	cf582663bd5946eb
+1729	2115	1733119873831687078	program_design_week	ea5f7668d038a005

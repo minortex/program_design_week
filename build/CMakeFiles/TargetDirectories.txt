@@ -1,0 +1,8 @@
+/home/texsd/codes/program_design_week/build/CMakeFiles/program_design_week.dir
+/home/texsd/codes/program_design_week/build/CMakeFiles/edit_cache.dir
+/home/texsd/codes/program_design_week/build/CMakeFiles/rebuild_cache.dir
+/home/texsd/codes/program_design_week/build/CMakeFiles/list_install_components.dir
+/home/texsd/codes/program_design_week/build/CMakeFiles/install.dir
+/home/texsd/codes/program_design_week/build/CMakeFiles/install/local.dir
+/home/texsd/codes/program_design_week/build/CMakeFiles/install/strip.dir
+/home/texsd/codes/program_design_week/build/CMakeFiles/program_design_week_autogen.dir

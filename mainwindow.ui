@@ -6,25 +6,107 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>519</width>
+    <height>334</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>130</y>
+      <width>256</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans CJK HK'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;欢迎使用数据处理系统。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>230</y>
+      <width>88</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>519</width>
      <height>31</height>
     </rect>
    </property>
+   <widget class="QMenu" name="dataOperation">
+    <property name="title">
+     <string>数据操作</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionFind"/>
+    <addaction name="actionChange"/>
+    <addaction name="actionStatics"/>
+   </widget>
+   <widget class="QMenu" name="fileOperation">
+    <property name="title">
+     <string>文件操作</string>
+    </property>
+    <addaction name="actionSave"/>
+    <addaction name="actionLoad"/>
+   </widget>
+   <addaction name="dataOperation"/>
+   <addaction name="fileOperation"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew">
+   <property name="text">
+    <string>新增数据</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="text">
+    <string>查找数据</string>
+   </property>
+  </action>
+  <action name="actionChange">
+   <property name="text">
+    <string>修改数据</string>
+   </property>
+  </action>
+  <action name="actionStatics">
+   <property name="text">
+    <string>统计数据</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>保存到文件</string>
+   </property>
+  </action>
+  <action name="actionLoad">
+   <property name="text">
+    <string>从文件载入</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

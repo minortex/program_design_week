@@ -37,12 +37,8 @@ void MainWindow::onActionNewTriged()
         "万户",
         149.34
     );
-        qDebug() << "新记录创建:";
-        qDebug() << "地区:" << static_cast<int>(record.getRegion());
-        qDebug() << "年份:" << record.getYear();
-        qDebug() << "指标类型:" << static_cast<int>(record.getIndicatorType());
-        qDebug() << "单位:" << record.getUnit();
-        qDebug() << "数值:" << record.getValue();
+    m_records.append(record);
+    qDebug() << "当前记录数量:" << m_records.size();
 }
 
 void MainWindow::onActionFindTriged()

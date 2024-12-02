@@ -1,8 +1,0 @@
-/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/program_design_week.dir
-/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/edit_cache.dir
-/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/rebuild_cache.dir
-/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/list_install_components.dir
-/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/install.dir
-/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/install/local.dir
-/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/install/strip.dir
-/home/texsd/codes/program_design_week/build/unknown-Debug/CMakeFiles/program_design_week_autogen.dir

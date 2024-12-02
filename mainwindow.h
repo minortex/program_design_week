@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <qvector.h>
+#include "datarecord.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,6 +28,7 @@ private slots:
     void onActionFileLoadTriged();
 
 private:
+    QVector<dataRecord> m_records;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

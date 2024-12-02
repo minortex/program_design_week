@@ -17,6 +17,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots: 
+    void onActionNewTriged();
+    void onActionFindTriged();
+    void onActionChangeTriged();
+    void onActionStaticsTriged();
+    void onActionFileSaveTriged();
+    void onActionFileLoadTriged();
+
 private:
     Ui::MainWindow *ui;
 };

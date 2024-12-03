@@ -24,3 +24,4 @@ dataRecord::dataRecord(
 {
 }
 
+// 你可以继续定义 getter 和 setter 方法，这部分保持不变

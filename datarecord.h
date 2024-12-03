@@ -4,31 +4,30 @@
 #include <QString>
 #include <QDate>
 #include <QVector>
+#include <QJsonObject>  // 添加头文件用于 JSON 转换
 
-// 地区名称列表，使用 QVector<QString> 存储所有地区
 static const QVector<QString> regionNames = {
-    "北京", "上海", "天津", "重庆",  // 直辖市
-    "河北", "山西", "辽宁", "吉林", "黑龙江", // 华北和东北
-    "江苏", "浙江", "安徽", "福建", "江西", "山东", // 华东
-    "河南", "湖北", "湖南", "广东", "广西", "海南", // 中南
-    "四川", "贵州", "云南", "西藏", // 西南
-    "陕西", "甘肃", "青海", "宁夏", "新疆", // 西北
-    "香港", "澳门", "台湾", // 港澳台
-    "全国" // 全国
+    "北京", "上海", "天津", "重庆",
+    "河北", "山西", "辽宁", "吉林", "黑龙江",
+    "江苏", "浙江", "安徽", "福建", "江西", "山东",
+    "河南", "湖北", "湖南", "广东", "广西", "海南",
+    "四川", "贵州", "云南", "西藏",
+    "陕西", "甘肃", "青海", "宁夏", "新疆",
+    "香港", "澳门", "台湾",
+    "全国"
 };
 
-// 指标类型枚举
 enum class indicatorType {
-    fixedPhoneUsers,        // 固定电话用户数
-    mobilePhoneUsers,       // 移动电话用户数
-    internetUsers,          // 互联网用户数
-    fixedAssetsInvestment,  // 通信固定资产投入
-    communicationIncome,    // 通信业收入
-    infoServiceIncome,      // 信息服务收入
-    infoProductIncome       // 信息产品收入
+    fixedPhoneUsers,
+    mobilePhoneUsers,
+    internetUsers,
+    fixedAssetsInvestment,
+    communicationIncome,
+    infoServiceIncome,
+    infoProductIncome
 };
 
-// 存储计量单位的类
+// ValueWithUnit 类转换为 QJsonObject
 class ValueWithUnit {
 public:
     ValueWithUnit() = default;
@@ -40,30 +39,36 @@ public:
     void setValue(double value) { m_value = value; }
     void setUnit(const QString& unit) { m_unit = unit; }
 
+    // 转换为 QJsonObject
+    QJsonObject toJson() const {
+        QJsonObject json;
+        json["value"] = m_value;
+        json["unit"] = m_unit;
+        return json;
+    }
+
 private:
     double m_value;
     QString m_unit;
 };
 
-// 用于存储数据记录的类
+// dataRecord 类转换为 QJsonObject
 class dataRecord {
 public:
-    // 构造函数
     dataRecord() = default;
     dataRecord(
-        const QString& regionName,  // 传入地区名称（QString）
-        int year,                   // 年份
-        const ValueWithUnit& fixedPhoneUsers, // 固定电话用户数及其单位
-        const ValueWithUnit& mobilePhoneUsers, // 移动电话用户数及其单位
-        const ValueWithUnit& internetUsers, // 互联网用户数及其单位
-        const ValueWithUnit& fixedAssetsInvestment, // 通信固定资产投入及其单位
-        const ValueWithUnit& communicationIncome, // 通信业收入及其单位
-        const ValueWithUnit& infoServiceIncome, // 信息服务收入及其单位
-        const ValueWithUnit& infoProductIncome // 信息产品收入及其单位
-    );
+        const QString& regionName,
+        int year,
+        const ValueWithUnit& fixedPhoneUsers,
+        const ValueWithUnit& mobilePhoneUsers,
+        const ValueWithUnit& internetUsers,
+        const ValueWithUnit& fixedAssetsInvestment,
+        const ValueWithUnit& communicationIncome,
+        const ValueWithUnit& infoServiceIncome,
+        const ValueWithUnit& infoProductIncome
+        );
 
-    // 访问方法
-    QString getRegion() const { return m_region; }  // 返回地区名称（QString）
+    QString getRegion() const { return m_region; }
     int getYear() const { return m_year; }
     ValueWithUnit getFixedPhoneUsers() const { return m_fixedPhoneUsers; }
     ValueWithUnit getMobilePhoneUsers() const { return m_mobilePhoneUsers; }
@@ -73,7 +78,6 @@ public:
     ValueWithUnit getInfoServiceIncome() const { return m_infoServiceIncome; }
     ValueWithUnit getInfoProductIncome() const { return m_infoProductIncome; }
 
-    // 设置方法
     void setRegion(const QString& regionName) { m_region = regionName; }
     void setYear(int year) { m_year = year; }
     void setFixedPhoneUsers(const ValueWithUnit& value) { m_fixedPhoneUsers = value; }
@@ -84,16 +88,32 @@ public:
     void setInfoServiceIncome(const ValueWithUnit& value) { m_infoServiceIncome = value; }
     void setInfoProductIncome(const ValueWithUnit& value) { m_infoProductIncome = value; }
 
+    // 转换为 QJsonObject
+    QJsonObject toJson() const {
+        QJsonObject json;
+        json["region"] = m_region;
+        json["year"] = m_year;
+        json["fixedPhoneUsers"] = m_fixedPhoneUsers.toJson();
+        json["mobilePhoneUsers"] = m_mobilePhoneUsers.toJson();
+        json["internetUsers"] = m_internetUsers.toJson();
+        json["fixedAssetsInvestment"] = m_fixedAssetsInvestment.toJson();
+        json["communicationIncome"] = m_communicationIncome.toJson();
+        json["infoServiceIncome"] = m_infoServiceIncome.toJson();
+        json["infoProductIncome"] = m_infoProductIncome.toJson();
+        return json;
+    }
+
 private:
-    QString m_region;            // 地区名称（QString）
-    int m_year;                  // 年份
-    ValueWithUnit m_fixedPhoneUsers;   // 固定电话用户数
-    ValueWithUnit m_mobilePhoneUsers;  // 移动电话用户数
-    ValueWithUnit m_internetUsers;     // 互联网用户数
-    ValueWithUnit m_fixedAssetsInvestment; // 通信固定资产投入
-    ValueWithUnit m_communicationIncome; // 通信业收入
-    ValueWithUnit m_infoServiceIncome;  // 信息服务收入
-    ValueWithUnit m_infoProductIncome; // 信息产品收入
+    QString m_region;
+    int m_year;
+    ValueWithUnit m_fixedPhoneUsers;
+    ValueWithUnit m_mobilePhoneUsers;
+    ValueWithUnit m_internetUsers;
+    ValueWithUnit m_fixedAssetsInvestment;
+    ValueWithUnit m_communicationIncome;
+    ValueWithUnit m_infoServiceIncome;
+    ValueWithUnit m_infoProductIncome;
 };
 
 #endif // DATARECORD_H
+

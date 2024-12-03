@@ -1,7 +1,10 @@
 #ifndef ADDRECORDS_H
 #define ADDRECORDS_H
 
+#include "mainwindow.h"
 #include <QDialog>
+
+class MainWindow;
 
 namespace Ui {
 class AddRecordsDialog;
@@ -16,11 +19,12 @@ public:
     ~AddRecordsDialog();                                     // 析构函数
 
 private slots:
-    void on_okButton_clicked();    // 例如，确认按钮的点击事件
+    void processInput();    // 例如，确认按钮的点击事件
     void on_cancelButton_clicked(); // 例如，取消按钮的点击事件
 
 private:
     Ui::AddRecordsDialog *ui;  // UI 对象指针
+    MainWindow *m_mainWindow;
 };
 
 #endif // ADDRECORDS_H

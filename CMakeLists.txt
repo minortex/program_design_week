@@ -19,7 +19,10 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        datarecord.h
         datarecord.cpp
+        addrecords.h
+        addrecords.cpp
         ${TS_FILES}
 )
 

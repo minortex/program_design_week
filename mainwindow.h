@@ -18,6 +18,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QVector<dataRecord>& getRecords();
+    void addRecord(const dataRecord &record);
 
 private slots: 
     void onActionNewTriged();

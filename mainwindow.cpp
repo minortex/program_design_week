@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "datarecord.h"
-#include "ui_addrecords.h"
+#include "addrecords.h"
 #include <QDebug>
 #include <QAction>
 #include <QDialog>
@@ -16,12 +16,23 @@ MainWindow::MainWindow(QWidget *parent)
     menuBar()->setNativeMenuBar(false);
     qDebug() << "MenuBar visible:" << ui->menubar->isVisible();
 
+    // 创建记录
     connect(ui->actionNew, &QAction::triggered, this, &MainWindow::onActionNewTriged);
-    connect(ui->actionFind, &QAction::triggered, this, &MainWindow::onActionNewTriged);
-    connect(ui->actionChange, &QAction::triggered, this, &MainWindow::onActionNewTriged);
-    connect(ui->actionStatics, &QAction::triggered, this, &MainWindow::onActionNewTriged);
-    connect(ui->actionSave, &QAction::triggered, this, &MainWindow::onActionNewTriged);
-    connect(ui->actionLoad, &QAction::triggered, this, &MainWindow::onActionNewTriged);
+    connect(ui->actionFind, &QAction::triggered, this, &MainWindow::onActionFindTriged);
+    connect(ui->actionChange, &QAction::triggered, this, &MainWindow::onActionChangeTriged);
+    connect(ui->actionStatics, &QAction::triggered, this, &MainWindow::onActionStaticsTriged);
+    connect(ui->actionSave, &QAction::triggered, this, &MainWindow::onActionFileSaveTriged);
+    connect(ui->actionLoad, &QAction::triggered, this, &MainWindow::onActionFileLoadTriged);
+    
+}
+QVector<dataRecord>& MainWindow::getRecords()
+{
+    return m_records; // 返回引用，供外部修改
+}
+
+void MainWindow::addRecord(const dataRecord &record)
+{
+    m_records.append(record); // 添加记录
 }
 
 MainWindow::~MainWindow()
@@ -31,56 +42,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::onActionNewTriged()
 {
-    // 创建 addrecords 窗口实例并显示
-    QDialog *addRecordDialog = new QDialog(this);  // 创建一个 QDialog 类型的窗口
-    Ui::AddRecordsDialog uiAddRecords;
-    uiAddRecords.setupUi(addRecordDialog);  // 使用 ui_addrecords.h 中的 setupUi 方法
-
-    addRecordDialog->exec();  // 显示窗口并阻塞，直到关闭窗口
-// // 先确定一些指标
-// ValueWithUnit fixedPhone(100.0, "万户");
-// ValueWithUnit mobilePhone(200.0, "万户");
-// ValueWithUnit internet(150.0, "万户");
-// ValueWithUnit fixedAssets(500.0, "万元");
-// ValueWithUnit communication(1000.0, "万元");
-// ValueWithUnit infoService(200.0, "万元");
-// ValueWithUnit infoProduct(300.0, "万元");
-
-// // 创建 dataRecord 对象
-// dataRecord record(
-//     "广东",       // 地区名称（QString）
-//     2024,         // 年份
-//     fixedPhone,    // 固定电话用户数
-//     mobilePhone,   // 移动电话用户数
-//     internet,      // 互联网用户数
-//     fixedAssets,   // 固定资产投入
-//     communication, // 通信业收入
-//     infoService,   // 信息服务收入
-//     infoProduct    // 信息产品收入
-// );
-
-// // 输出验证
-// qDebug() << "记录创建成功:";
-// qDebug() << "地区:" << record.getRegion(); 
-// qDebug() << "年份:" << record.getYear();
-// qDebug() << "移动电话用户:" << record.getMobilePhoneUsers().getValue() 
-//         << record.getMobilePhoneUsers().getUnit();
-// qDebug() << "信息产业收入:" << record.getInfoProductIncome().getValue() 
-//         << record.getInfoProductIncome().getUnit();
-
-// // 添加记录到 QVector 容器
-// m_records.append(record);
-
-// // 验证记录数
-// qDebug() << "当前记录数量" << m_records.size();
-
-// // 遍历记录
-// for (const auto& rec : m_records) {
-//     qDebug() << "地区:" << rec.getRegion()   // 输出地区名称（QString）
-//             << "年份:" << rec.getYear()
-//             << "移动电话用户:" << rec.getMobilePhoneUsers().getValue() 
-//             << rec.getMobilePhoneUsers().getUnit();
-// }
+AddRecordsDialog dialog(this); // 将主窗口作为父窗口
+    int result = dialog.exec();    // 显示模态窗口，并等待用户操作
+    if (result == QDialog::Accepted) {
+        qDebug() << "Dialog accepted!";
+        // 可在此处理用户点击确认后的逻辑
+    } else {
+        qDebug() << "Dialog rejected!";
+        // 可在此处理用户点击取消后的逻辑
+    }
 
 }
 

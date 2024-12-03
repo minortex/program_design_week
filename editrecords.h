@@ -5,7 +5,7 @@
 #include "datarecord.h"
 
 namespace Ui {
-class Dialog;
+class EditRecordsDialog;
 }
 
 class editRecords : public QDialog
@@ -30,7 +30,7 @@ private slots:
     // void on_buttonBox_rejected();
 
 private:
-    Ui::Dialog *ui;  // UI 指针，负责界面的控制
+    Ui::EditRecordsDialog *ui;  // UI 指针，负责界面的控制
     dataRecord *record;  // 原始数据记录
 };
 

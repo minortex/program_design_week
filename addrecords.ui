@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>AddRecordsDialog</class>
+ <widget class="QDialog" name="AddRecordsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -84,7 +84,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -109,7 +109,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -244,7 +244,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -269,7 +269,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -294,7 +294,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -319,7 +319,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -344,7 +344,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -369,7 +369,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -394,7 +394,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -419,7 +419,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">

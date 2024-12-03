@@ -18,6 +18,7 @@ set(PROJECT_SOURCES
         mainwindow.h
         datarecord.h
         datarecord.cpp
+        ui_addrecords.h
         addrecords.h
         addrecords.cpp
         editrecords.h

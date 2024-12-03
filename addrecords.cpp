@@ -1,6 +1,5 @@
 #include "addrecords.h"
 #include "mainwindow.h"
-#include "ui_addrecords.h"
 #include <qdialogbuttonbox.h>
 #include <QDebug>
 #include <QMessageBox>
@@ -75,7 +74,13 @@ void AddRecordsDialog::processInput()
     ValueWithUnit infoProductIncome = parseValueWithUnit(infoProduct, infoProductUnit);
 
     dataRecord record(region, yearInt, fixedPhoneUsers, mobilePhoneUsers, internetUsers, fixedAssetsInvestment, communicationIncome, infoServiceIncome, infoProductIncome);
-
+    
+    if (fixedPhoneUsers.getValue() == 0.0 || mobilePhoneUsers.getValue() == 0.0 || internetUsers.getValue() == 0.0 ||
+        fixedAssetsInvestment.getValue() == 0.0 || communicationIncome.getValue() == 0.0 || infoServiceIncome.getValue() == 0.0 ||
+        infoProductIncome.getValue() == 0.0) {
+        QMessageBox::warning(this, "警告", "输入的数值无效，请检查数据！");
+        return; // 取消保存，退出
+    }
     if (MainWindow *mainWindow = qobject_cast<MainWindow*>(parent())) {
         mainWindow->addRecord(record);
 

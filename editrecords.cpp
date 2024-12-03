@@ -6,7 +6,7 @@
 
 // 构造函数
 editRecords::editRecords(dataRecord *record, QWidget *parent)
-    : QDialog(parent), ui(new Ui::Dialog), record(record)
+    : QDialog(parent), ui(new Ui::EditRecordsDialog), record(record)
 {
     ui->setupUi(this);
 

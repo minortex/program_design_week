@@ -2,6 +2,7 @@
 #define ADDRECORDS_H
 
 #include "mainwindow.h"
+#include "ui_addrecords.h"
 #include <QDialog>
 
 class MainWindow;

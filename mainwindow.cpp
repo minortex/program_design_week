@@ -1,8 +1,10 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "datarecord.h"
+#include "ui_addrecords.h"
 #include <QDebug>
 #include <QAction>
+#include <QDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -29,50 +31,56 @@ MainWindow::~MainWindow()
 
 void MainWindow::onActionNewTriged()
 {
-// 先确定一些指标
-ValueWithUnit fixedPhone(100.0, "万户");
-ValueWithUnit mobilePhone(200.0, "万户");
-ValueWithUnit internet(150.0, "万户");
-ValueWithUnit fixedAssets(500.0, "万元");
-ValueWithUnit communication(1000.0, "万元");
-ValueWithUnit infoService(200.0, "万元");
-ValueWithUnit infoProduct(300.0, "万元");
+    // 创建 addrecords 窗口实例并显示
+    QDialog *addRecordDialog = new QDialog(this);  // 创建一个 QDialog 类型的窗口
+    Ui::AddRecordsDialog uiAddRecords;
+    uiAddRecords.setupUi(addRecordDialog);  // 使用 ui_addrecords.h 中的 setupUi 方法
 
-// 创建 dataRecord 对象
-dataRecord record(
-    "广东",       // 地区名称（QString）
-    2024,         // 年份
-    fixedPhone,    // 固定电话用户数
-    mobilePhone,   // 移动电话用户数
-    internet,      // 互联网用户数
-    fixedAssets,   // 固定资产投入
-    communication, // 通信业收入
-    infoService,   // 信息服务收入
-    infoProduct    // 信息产品收入
-);
+    addRecordDialog->exec();  // 显示窗口并阻塞，直到关闭窗口
+// // 先确定一些指标
+// ValueWithUnit fixedPhone(100.0, "万户");
+// ValueWithUnit mobilePhone(200.0, "万户");
+// ValueWithUnit internet(150.0, "万户");
+// ValueWithUnit fixedAssets(500.0, "万元");
+// ValueWithUnit communication(1000.0, "万元");
+// ValueWithUnit infoService(200.0, "万元");
+// ValueWithUnit infoProduct(300.0, "万元");
 
-// 输出验证
-qDebug() << "记录创建成功:";
-qDebug() << "地区:" << record.getRegion(); 
-qDebug() << "年份:" << record.getYear();
-qDebug() << "移动电话用户:" << record.getMobilePhoneUsers().getValue() 
-        << record.getMobilePhoneUsers().getUnit();
-qDebug() << "信息产业收入:" << record.getInfoProductIncome().getValue() 
-        << record.getInfoProductIncome().getUnit();
+// // 创建 dataRecord 对象
+// dataRecord record(
+//     "广东",       // 地区名称（QString）
+//     2024,         // 年份
+//     fixedPhone,    // 固定电话用户数
+//     mobilePhone,   // 移动电话用户数
+//     internet,      // 互联网用户数
+//     fixedAssets,   // 固定资产投入
+//     communication, // 通信业收入
+//     infoService,   // 信息服务收入
+//     infoProduct    // 信息产品收入
+// );
 
-// 添加记录到 QVector 容器
-m_records.append(record);
+// // 输出验证
+// qDebug() << "记录创建成功:";
+// qDebug() << "地区:" << record.getRegion(); 
+// qDebug() << "年份:" << record.getYear();
+// qDebug() << "移动电话用户:" << record.getMobilePhoneUsers().getValue() 
+//         << record.getMobilePhoneUsers().getUnit();
+// qDebug() << "信息产业收入:" << record.getInfoProductIncome().getValue() 
+//         << record.getInfoProductIncome().getUnit();
 
-// 验证记录数
-qDebug() << "当前记录数量" << m_records.size();
+// // 添加记录到 QVector 容器
+// m_records.append(record);
 
-// 遍历记录
-for (const auto& rec : m_records) {
-    qDebug() << "地区:" << rec.getRegion()   // 输出地区名称（QString）
-            << "年份:" << rec.getYear()
-            << "移动电话用户:" << rec.getMobilePhoneUsers().getValue() 
-            << rec.getMobilePhoneUsers().getUnit();
-}
+// // 验证记录数
+// qDebug() << "当前记录数量" << m_records.size();
+
+// // 遍历记录
+// for (const auto& rec : m_records) {
+//     qDebug() << "地区:" << rec.getRegion()   // 输出地区名称（QString）
+//             << "年份:" << rec.getYear()
+//             << "移动电话用户:" << rec.getMobilePhoneUsers().getValue() 
+//             << rec.getMobilePhoneUsers().getUnit();
+// }
 
 }
 

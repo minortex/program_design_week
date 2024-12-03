@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1054</width>
+    <width>1084</width>
     <height>571</height>
    </rect>
   </property>
@@ -14,40 +14,63 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableView" name="tableView">
+   <widget class="QPushButton" name="newButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>30</x>
+      <y>450</y>
+      <width>88</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>新增</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="searchButton">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>450</y>
+      <width>88</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>搜索</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="searchLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>450</y>
+      <width>301</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListView" name="listView">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
       <y>30</y>
-      <width>961</width>
-      <height>401</height>
+      <width>1011</width>
+      <height>391</height>
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="modifyButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>460</y>
+      <x>960</x>
+      <y>450</y>
       <width>88</width>
-      <height>36</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>460</y>
-      <width>88</width>
-      <height>36</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
+     <string>修改</string>
     </property>
    </widget>
   </widget>
@@ -57,7 +80,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1054</width>
+     <width>1084</width>
      <height>31</height>
     </rect>
    </property>

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <qvector.h>
 #include "datarecord.h"
+#include <qstringlistmodel.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -18,8 +19,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
     QVector<dataRecord>& getRecords();
     void addRecord(const dataRecord &record);
+    void updateListView();
 
 private slots: 
     void onActionNewTriged();
@@ -28,9 +31,13 @@ private slots:
     void onActionStaticsTriged();
     void onActionFileSaveTriged();
     void onActionFileLoadTriged();
+    void onSearchButtonClicked();
+    void onModifyButtonPushed();
 
 private:
     QVector<dataRecord> m_records;
+    QStringListModel *listModel;
+    QVector<dataRecord> filteredRecords;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

@@ -26,18 +26,17 @@ public:
 
 private slots: 
     void onActionNewTriged();
-    void onActionFindTriged();
-    void onActionChangeTriged();
     void onActionStaticsTriged();
     void onActionFileSaveTriged();
     void onActionFileLoadTriged();
     void onSearchButtonClicked();
     void onModifyButtonPushed();
+    void onDeleteButtonPushed();
 
 private:
     QVector<dataRecord> m_records;
     QStringListModel *listModel;
-    QVector<dataRecord> filteredRecords;
+    QVector<dataRecord*> filteredRecords;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

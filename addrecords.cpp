@@ -43,6 +43,7 @@ void AddRecordsDialog::processInput()
     QString communicationUnit = ui->communicationUnit->text();
     QString infoServiceUnit = ui->infoServiceUnit->text();
     QString infoProductUnit = ui->infoProductUnit->text();
+    // ui->infoProductUnit->setText("test");
 
     // 检查是否有必填项未填写
     if (region.isEmpty() || year.isEmpty()) {
@@ -96,6 +97,7 @@ void AddRecordsDialog::processInput()
 
     // 提示用户操作成功
     QMessageBox::information(this, "成功", "记录已成功添加！");
+    accept(); // 关闭窗口
 }
 void AddRecordsDialog::on_cancelButton_clicked()
 {

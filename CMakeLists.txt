@@ -18,11 +18,12 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
-        mainwindow.ui
         datarecord.h
         datarecord.cpp
         addrecords.h
         addrecords.cpp
+        editrecords.h
+        editrecords.cpp
         ${TS_FILES}
 )
 
@@ -48,6 +49,7 @@ else()
         add_executable(program_design_week
             ${PROJECT_SOURCES}
             addrecords.ui
+            editrecords.ui
         )
     endif()
 
